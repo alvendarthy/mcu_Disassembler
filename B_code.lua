@@ -28,8 +28,7 @@ _M.decode = function(code)
 	if(_M.is(code))then
 		local mcode = bit.band(code, code_mask)
 		local arg1 = bit.band(code, arg1_mask)
-		local code_str = string.format("%s\t%d", _M.map[mcode], arg1)
-		return code_str
+		return {["op"] = _M.map[mcode], ["arg1"] = arg1}
 	end
 	
 	return nil

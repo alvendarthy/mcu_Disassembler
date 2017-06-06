@@ -41,8 +41,7 @@ _M.decode = function(code)
 		if(arg1 ~= 0) then
 			arg1 = 1
 		end
-		local code_str = string.format("%s\t0x%s,\t%d", _M.map[m_code], bit.tohex(arg2,4), arg1)
-		return code_str
+		return {["op"]=_M.map[m_code], ["arg1"]=arg2, ["arg2"]=arg1}
 	end
 	
 	return nil

@@ -27,8 +27,7 @@ _M.decode = function(code)
 		local m_code = bit.band(code, code_mask)
 		local arg1 = bit.rshift(bit.band(code, arg1_mask),7)
 		local arg2 = bit.band(code, arg2_mask)
-		local code_str = string.format("%s\t0x%d,\t%d", _M.map[m_code], bit.tohex(arg2,4), arg1)
-		return code_str
+		return {["op"] = _M.map[m_code], ["arg1"] = arg2, ["arg2"] = arg1}
 	end
 	
 	return nil

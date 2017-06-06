@@ -22,7 +22,7 @@ end
 
 _M.decode = function(code)
 	if(_M.is(code))then
-		return _M.map[code]
+		return {["op"] = _M.map[code]}
 	end
 
 	return nil
