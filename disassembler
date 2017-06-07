@@ -1,0 +1,3 @@
+#/bin/bash
+./make_plain.sh $1 > t.o
+lua main.lua t.o
